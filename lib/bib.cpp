@@ -28,3 +28,10 @@ f.close();
 }
 
 
+double average(int* avf, int length) {
+
+}
+
+int summ(int* sf, int length) {
+
+}
