@@ -30,15 +30,15 @@ f.close();
 
 double average(int* avf, int length) {
 	int i, j, x;
-	double S;
-	S = 0;
+	double Summ;
+	Summ = 0;
 	i = 0;
 	j = length - 1;
 	while (i <= j) {
-		S = S + avf[i];
+		Summ = Summ + avf[i];
 		i++;
 	}
-	return (S / length);
+	return (Summ / length);
 }
 
 double dispers(int* dispf, int length) {
