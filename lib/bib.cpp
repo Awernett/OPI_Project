@@ -32,6 +32,6 @@ double average(int* avf, int length) {
 
 }
 
-int summ(int* sf, int length) {
+int summ(int* summf, int length) {
 
 }
