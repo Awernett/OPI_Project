@@ -43,13 +43,13 @@ double average(int* avf, int length) {
 
 double dispers(int* dispf, int length) {
 	int i, j, g;
-	double S, aver;
+	double S, ava;
 	i = 0;
 	j = length - 1;
-	aver = average(dispf, length);
+	ava = average(dispf, length);
 	while (i < j)
 	{
-		S = S + (dispf[i] - aver)*(dispf[i] - aver);
+		S = S + (dispf[i] - ava)*(dispf[i] - ava);
 		i++;
 	}
 	return (S / length);
