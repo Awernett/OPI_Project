@@ -29,7 +29,16 @@ f.close();
 
 
 double average(int* avf, int length) {
-
+	int i, j, x;
+	double S;
+	S = 0;
+	i = 0;
+	j = length - 1;
+	while (i <= j) {
+		S = S + avf[i];
+		i++;
+	}
+	return (S / length);
 }
 
 int summ(int* summf, int length) {
