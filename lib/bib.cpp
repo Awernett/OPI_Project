@@ -46,10 +46,10 @@ double dispers(int* dispf, int length) {
 	double S, av;
 	i = 0;
 	j = length - 1;
-	av = average(dispf, length);
+	aver = average(dispf, length);
 	while (i < j)
 	{
-		S = S + (dispf[i] - av)*(dispf[i] - av);
+		S = S + (dispf[i] - aver)*(dispf[i] - aver);
 		i++;
 	}
 	return (S / length);
