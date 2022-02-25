@@ -41,6 +41,20 @@ double average(int* avf, int length) {
 	return (S / length);
 }
 
+double dispers(int* dispf, int length) {
+	int i, j, g;
+	double S, av;
+	i = 0;
+	j = length - 1;
+	av = average(dispf, length);
+	while (i < j)
+	{
+		S = S + (dispf[i] - av)*(dispf[i] - av);
+		i++;
+	}
+	return (S / length);
+}
+
 int summ(int* summf, int length) {
 
 }
