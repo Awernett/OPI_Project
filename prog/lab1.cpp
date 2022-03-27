@@ -1,3 +1,9 @@
+/*!
+* \file
+* \brief Main file
+*  This is the main file of this project
+*/
+
 #include <iostream>
 #include <bib.h>
 #include <unistd.h>
@@ -6,27 +12,47 @@
 
 using namespace std;
 
-
 const int maxlength=1000;
-int m_init[maxlength]; //cчитывание с файла
-int n; // хранит размер массива
-
+int m_init[maxlength]; 
+int n; 
+/*!
+ * @brief printhelp
+ * 
+ * Function, dedicated to give out key information about the capabilities of this project.
+ *
+ * 
+ * @return Information about functions and their parameters.
+ */
 void printhelp()
 {
   setlocale (LC_ALL, "rus");
   cout << " -a (filename) - имя входного файла "<< endl << " -b (filename) - имя выходного файла " << endl << "-o (параметр) - операция над файлом (вычисление среднего(aver), вычисление дисперсии(disp), " << endl << "вычисление среднеквадратичного отклонения(sq))" << endl;
 }
 
+/*!
+ * @brief printerror
+ *
+ * Function, dedicated to give out information about an error, that may have occured.
+ *
+ *
+ * @return Information about errors.
+ */
 void printerror()
 {
-cout<<"error"<<endl;
+	cout<<"error"<<endl;
 }
 
-// -a - имя входного файла
-// -b - имя выходного файла
-// -o - операция над файлом (вычисление среднего(aver), вычисление дисперсии(disp),
-// вычисление среднеквадратичного отклонения(sq))
-// -h - справка
+/*!
+ * @brief Entry point
+ *
+ * Execution of the program
+ * starts here.
+ *
+ * @param argc Number of arguments
+ * @param argv List of arguments
+ *
+ * @return Program exit status
+ */
 int main(int argc, char *argv[])
 {
 int rs;
