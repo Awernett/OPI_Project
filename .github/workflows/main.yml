@@ -1,4 +1,4 @@
-name: CI
+name: Make Doxygen
 
 on:
   push:
@@ -7,15 +7,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-    - name: Check file existence
-      id: check_files
-      uses: andstor/file-existence-action@v1
+    - uses: actions/checkout@v2
+    - name: CreateDocumentation
+      uses: mattnotmitt/doxygen-action@v1.9.2
       with:
-        files: "test.txt"
-    - name: File exists
-      if: steps.check_files.outputs.files_exists == 'true'
-        # Only runs if all of the files exists
-      run: echo All files exists!
+        doxyfile-path: './Doxyfile'
+    - name: upload result
+      uses: actions/upload-artifact@v2
+      with:
+        path: doc
+        name: Documentation
+    - name: Push to another repository
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'doc'
+        destination-github-username: 'Awernett'
+        destination-repository-name: 'OPI_Project.io'
+        user-email: 2020102840@pnu.edu.ru
+        target-branch: master
